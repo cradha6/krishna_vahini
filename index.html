@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fruitBusinessApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Vahini Enterprises</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="MainController">
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="logo.png" alt="Krishna Vahini Enterprises Logo">
+      <h1>Empowering Business, Enriching Lives</h1>
+      <p>Connecting Farms to the World</p>
+      <button ng-click="scrollTo('about')">Learn More</button>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <h2>About Krishna Vahini Enterprises</h2>
+    <p>
+      At Krishna Vahini Enterprises, we are committed to excellence in agri-import and export. We bring the world closer by:
+      <ul>
+        <li>Importing premium agricultural products.</li>
+        <li>Exporting the finest Indian produce, including mangoes, fruits, and spices.</li>
+        <li>Empowering businesses and enriching lives through sustainable practices.</li>
+      </ul>
+    </p>
+    <button ng-click="scrollTo('offerings')">Explore Our Offerings</button>
+  </section>
+
+  <!-- Our Offerings Section -->
+  <section id="offerings" class="offerings">
+    <h2>Our Offerings</h2>
+    <div class="offerings-content">
+      <div class="offerings-item">
+        <h3>Imported Agricultural Products</h3>
+        <p>Speciality grains, pulses, and ingredients sourced from trusted international suppliers.</p>
+      </div>
+      <div class="offerings-item">
+        <h3>Exported Excellence</h3>
+        <p>Delicious mangoes, fresh fruits, and authentic Indian spices known for their quality and flavor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="why-us">
+    <h2>Why Krishna Vahini Enterprises?</h2>
+    <div class="features">
+      <div class="feature">
+        <i class="icon-quality"></i>
+        <h4>Superior Quality</h4>
+        <p>We ensure only the best products reach our customers.</p>
+      </div>
+      <div class="feature">
+        <i class="icon-global"></i>
+        <h4>Global Reach</h4>
+        <p>Trusted logistics for seamless international trade.</p>
+      </div>
+      <div class="feature">
+        <i class="icon-sustainability"></i>
+        <h4>Sustainability First</h4>
+        <p>Eco-friendly practices to support our planet.</p>
+      </div>
+      <div class="feature">
+        <i class="icon-customized"></i>
+        <h4>Customized Solutions</h4>
+        <p>Tailored services for unique customer needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Website: <a href="https://krishnavahini.com">krishnavahini.com</a></p>
+    <p>Email: contact@krishnavahini.com</p>
+    <p>Phone: +1-800-123-4567</p>
+    <form ng-submit="submitForm()">
+      <input type="text" ng-model="formData.name" placeholder="Your Name" required>
+      <input type="email" ng-model="formData.email" placeholder="Your Email" required>
+      <textarea ng-model="formData.message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Krishna Vahini Enterprises. All rights reserved.</p>
+    <p>Follow us on: [Social Media Links]</p>
+  </footer>
+
+  <script>
+    const app = angular.module('fruitBusinessApp', []);
+    app.controller('MainController', function($scope, $window) {
+      $scope.scrollTo = function(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+      };
+
+      $scope.submitForm = function() {
+        alert('Thank you for contacting us!');
+        $scope.formData = {};
+      };
+    });
+  </script>
+</body>
+</html>
